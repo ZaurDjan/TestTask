@@ -1,0 +1,13 @@
+# Используем официальный образ PostgreSQL на базе Alpine Linux
+FROM postgres:alpine
+
+# Устанавливаем переменные окружения для настройки базы данных
+ENV POSTGRES_USER=myuser
+ENV POSTGRES_PASSWORD=mypassword
+ENV POSTGRES_DB=mydatabase
+
+# Копируем скрипты и конфигурационные файлы (если необходимо)
+# COPY ./init.sql /docker-entrypoint-initdb.d/
+
+# Указываем команду для запуска PostgreSQL
+CMD ["postgres"]
